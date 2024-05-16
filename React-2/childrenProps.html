@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic List Rendering</title>
+    </head>
+    <body>
+
+        <div id="root"></div>
+        <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+
+            let reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+            let App =() => {
+                function Gallery({ children, children1 }) {
+                    return (
+                        <>
+                            <img src={children} width='70%' height='auto'/>
+                        </>
+                    )
+                }
+
+                return (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px'}}>
+                        <Gallery children = "https://i.pinimg.com/236x/dd/80/22/dd8022c3f5be14ae863311b6f68fed47.jpg"/>
+                        <Gallery children = "https://i.pinimg.com/236x/ce/1b/0f/ce1b0f95efff7472243b3d3099fb57f1.jpg"/>
+                        <Gallery children = "https://i.pinimg.com/564x/ea/aa/3a/eaaa3aa55b33f936e8b227324c876ba8.jpg"/>
+                        <Gallery children="https://i.pinimg.com/236x/5f/c4/30/5fc4304494a2d739904727323f9e1286.jpg"/>
+                        <Gallery children="https://i.pinimg.com/236x/f8/20/5a/f8205af1396ea38b2bacb073efa57e6e.jpg"/>
+                        <Gallery children="https://i.pinimg.com/236x/ff/89/f5/ff89f5ca9a210076e5ba12eaffe3b221.jpg"/>
+                        <Gallery children="https://i.pinimg.com/236x/3d/22/e9/3d22e9a29dfde801ad1bb236bc017fe9.jpg"/>
+                        <Gallery children="https://i.pinimg.com/236x/5e/8e/28/5e8e28517e93b27d2de3124e1d84407f.jpg"/>
+                        <Gallery children="https://i.pinimg.com/236x/e2/f8/d0/e2f8d051833eae818a0b7a794dac52ba.jpg"/>
+                        <Gallery children="https://i.pinimg.com/474x/d8/91/a5/d891a561fc67bb4aa2ba7ef39a045fa5.jpg"/>
+                        <Gallery children="https://i.pinimg.com/474x/1c/ea/04/1cea04d5118e3bc9d5ae04fe63e33f3c.jpg"/>
+                        <Gallery children="https://i.pinimg.com/474x/db/8e/84/db8e84270b73084679dd10cafd02165f.jpg"/>
+                    </div>
+                )
+
+            }
+
+            reactRoot.render(<App/>)
+        </script>
+
+    </body>
+</html>
